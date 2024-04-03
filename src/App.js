@@ -1,23 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import { MultiStepsProgressBar } from './Components/MultiStepsProgressBar/MultiStepsProgressBar';
+import ContactDetails from "./Components/ContactDetails/ContactDetails";
+import OurServices from "./Components/OurServices/OurServices";
+import ProjectBudget from "./Components/ProjectBudget/ProjectBudget";
+import QuoteSubmit from "./Components/QuoteSubmit/QuoteSubmit";
 
 function App() {
+  const [step, setStep] = useState(1);
+
+  const handleNext = () => {
+    setStep((prevStep) => prevStep + 1);
+  };
+
+  const handlePrevious = () => {
+    setStep((prevStep) => prevStep - 1);
+  };
+
+  const handleSubmit = () => {
+    alert("Form submitted!");
+  };
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Get a project quote</h1>
+        <span data-testid="app-header-span">
+          Please fill the form below to receive a quote for your project. Feel
+          free to add as much detail as needed.
+        </span>
       </header>
+      <div className="progress-bar">
+        <MultiStepsProgressBar step={step}/>
+      </div>
+      <div className="form-container">
+        {step === 1 && <ContactDetails onNext={handleNext} />}
+        {step === 2 && (
+          <OurServices onPrevious={handlePrevious} onNext={handleNext} />
+        )}
+        {step === 3 && (
+          <ProjectBudget onPrevious={handlePrevious} onNext={handleNext} />
+        )}
+        {step === 4 && (
+          <QuoteSubmit onPrevious={handlePrevious} onSubmit={handleSubmit} />
+        )}
+      </div>
     </div>
   );
 }

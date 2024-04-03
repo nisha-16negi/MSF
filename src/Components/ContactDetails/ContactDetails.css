@@ -1,0 +1,54 @@
+.detail-container {
+    margin-top: 30px;
+    border: 2px solid lightgrey;
+    padding: 30px 55px;
+    border-radius: 14px;
+}
+
+.detail-container h1 {
+    margin: 0px;
+}
+
+.detail-container .para {
+    margin-bottom: 30px;
+}
+
+.sub-container{
+    display: flex;
+    gap: 30px;
+    margin-bottom: 45px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-container label{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.input input {
+    border: 2px solid lightgray;
+    height: 30px;
+    border-radius: 20px;
+    padding: 5px 20px;
+}
+
+input:focus-visible{
+    outline-color:  darkgray;
+}
+
+.input .icon {
+    margin-left: -25px;
+    margin-bottom: -3px;
+    color: #777;
+}
+
+.contact-btn{
+    display: flex;
+    justify-content: end;
+    margin-top: 30px;
+}

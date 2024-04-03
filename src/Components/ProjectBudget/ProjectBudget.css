@@ -1,0 +1,85 @@
+.project-budget-container{
+    margin-top: 30px;
+    border: 2px solid lightgrey;
+    padding: 30px 55px;
+    border-radius: 14px;
+}
+
+.project-budget-container h1{
+    margin: 0px;
+}
+
+.budget-para{
+    margin-bottom: 30px;
+} 
+
+.budget-sub-container{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.project-budget{
+    display: flex;
+    gap:10%;
+}
+
+.budget-container{
+    border: 2px solid rgb(243, 240, 240);
+    border-radius: 12px;
+    width: 10vw;
+    height: 12vh;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    cursor: pointer;
+    padding: 0px 12px;
+}
+
+.budget-container-checked{
+    border: 2px solid blue;
+    border-radius: 12px;
+    width: 10vw;
+    height: 12vh;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    cursor: pointer;
+    padding: 0px 12px;
+}
+
+.checkbox {
+    width: 20px; 
+    height: 20px;
+    border-radius: 50%; 
+    border: 1px solid lightgrey; 
+    margin-right: 10px; 
+    /* cursor: pointer; */
+  }
+
+  .checkbox-checked {
+    width: 20px; 
+    height: 20px;
+    border-radius: 50%; 
+    border: 1px solid blue; 
+    margin-right: 10px;
+  }
+
+  .checkbox-filled{
+    width: 10px; 
+    height: 10px;
+    border-radius: 50%; 
+    margin: 5px;
+    background-color: blue; 
+  }
+
+.budget-container:hover{
+    border: 2px solid lightgrey;
+}
+
+
+.budget-btn{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
