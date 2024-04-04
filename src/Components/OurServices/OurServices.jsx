@@ -28,7 +28,7 @@ const OurServices = (props) => {
                 setIsSelect("value1");
               }}
             >
-              <LuScreenShare color="#4A3AFF" />
+              <LuScreenShare color="#4A3AFF" className="icons"/>
               <span className="services">Development</span>
             </div>
             <div
@@ -40,7 +40,7 @@ const OurServices = (props) => {
                 setIsSelect("value2");
               }}
             >
-              <MdOutlineScreenSearchDesktop color="#4A3AFF" />
+              <MdOutlineScreenSearchDesktop color="#4A3AFF" className="icons"/>
               <span className="services">Web Design</span>
             </div>
           </div>
@@ -54,7 +54,7 @@ const OurServices = (props) => {
                 setIsSelect("value3");
               }}
             >
-              <HiSpeakerphone color="#4A3AFF" />
+              <HiSpeakerphone color="#4A3AFF" className="icons"/>
               <span className="services">Marketing</span>
             </div>
             <div
@@ -66,7 +66,7 @@ const OurServices = (props) => {
                 setIsSelect("value4");
               }}
             >
-              <IoMdSettings color="#4A3AFF" />
+              <IoMdSettings color="#4A3AFF" className="icons"/>
               <span className="services">Other</span>
             </div>
           </div>

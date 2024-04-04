@@ -1,37 +1,70 @@
+.p-container {
+  display: flex;
+  justify-content: center;
+}
+
 .App {
   width: 50vw;
   display: flex;
   flex-direction: column;
-  margin-left: 27vw;
 }
 
 .App-header {
- margin: 60px 0px;
+  margin: 40px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: calc(10px + 2vmin);
 }
 
-.App-header h1{
+.App-header h1 {
   font-size: 34px;
   font-weight: 700;
+  width: 680px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
-.App-header span{
-  width: 26vw;
+.App-header span {
+  width: 40vw;
   font-size: 18px;
   font-weight: 400;
 }
 
-.progress-bar, .form-container{
+.app-section {
   display: flex;
-  flex-direction: column;
-  width: 62%;
-  margin-left: 17%;
-  padding: 0 40px;
+  justify-content: center;
 }
 
-.form-container{
-  margin-top: 30px;
+.app-sub-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid lightgrey;
+  border-radius: 20px;
+  width: 42vw;
+  padding: 30px;
+}
+
+.progress-bar {
+  padding-bottom: 40px;
+  border-bottom: 2px solid lightgrey;
+}
+
+.progress-bar,
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 38vw;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .progress-bar,
+  .form-container {
+    width: 62%;
+
+  }
+
 }

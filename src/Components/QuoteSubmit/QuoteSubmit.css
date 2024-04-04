@@ -1,33 +1,38 @@
-.quote-submit-container{
+.quote-submit-container {
     margin-top: 30px;
-    border: 2px solid lightgrey;
-    padding: 30px 55px;
-    border-radius: 14px;
 }
 
-.quote-submit{
-    margin-left: 35%;
+.submit-icon {
+    display: flex;
+    justify-content: center;
+}
+
+.quote-submit {
     width: 6vw;
     height: 15vh;
 }
 
-.quote-sub-container{
+.quote-sub-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.quote-sub-container h1{
+.quote-sub-container h1 {
     margin: 0px;
-    margin-left: 25px;
-}
-
-.quote-btn{
     display: flex;
     justify-content: center;
+}
+
+.quote-submit-btn {
+    display: flex;
+    justify-content: space-between;
     margin-top: 30px;
 }
 
-.quote-prev-btn{
-    margin-top: 30px;
+@media (max-width: 1024px) {
+    .quote-submit-btn {
+        flex-direction: column;
+        gap: 20px;
+    }
 }

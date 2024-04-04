@@ -1,8 +1,7 @@
 .detail-container {
+    display: flex;
+    flex-direction: column;
     margin-top: 30px;
-    border: 2px solid lightgrey;
-    padding: 30px 55px;
-    border-radius: 14px;
 }
 
 .detail-container h1 {
@@ -15,7 +14,7 @@
 
 .sub-container{
     display: flex;
-    gap: 30px;
+    justify-content: space-between;
     margin-bottom: 45px;
 }
 
@@ -35,6 +34,8 @@
     height: 30px;
     border-radius: 20px;
     padding: 5px 20px;
+    width: 15vw;
+    height: 6vh;
 }
 
 input:focus-visible{
@@ -51,4 +52,13 @@ input:focus-visible{
     display: flex;
     justify-content: end;
     margin-top: 30px;
+}
+
+@media (max-width: 1024px) {
+    .sub-container{
+        flex-direction: column;
+    }
+    .contact-btn{
+        justify-content: flex-start;
+    }
 }

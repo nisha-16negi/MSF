@@ -1,8 +1,5 @@
 .project-budget-container{
     margin-top: 30px;
-    border: 2px solid lightgrey;
-    padding: 30px 55px;
-    border-radius: 14px;
 }
 
 .project-budget-container h1{
@@ -21,31 +18,34 @@
 
 .project-budget{
     display: flex;
-    gap:10%;
+    gap: 15px;
+    justify-content: space-between;
 }
 
 .budget-container{
     border: 2px solid rgb(243, 240, 240);
     border-radius: 12px;
-    width: 10vw;
-    height: 12vh;
+    width: 18vw;
+    height: 17vh;
     display: flex;
-    gap: 8px;
+    justify-content: flex-start;
     align-items: center;
     cursor: pointer;
-    padding: 0px 12px;
+    padding-left: 30px;
+    gap: 15px;
 }
 
 .budget-container-checked{
     border: 2px solid blue;
     border-radius: 12px;
-    width: 10vw;
-    height: 12vh;
+    width: 18vw;
+    height: 17vh;
     display: flex;
-    gap: 8px;
+    justify-content: flex-start;
     align-items: center;
     cursor: pointer;
-    padding: 0px 12px;
+    padding-left: 30px;
+    gap: 15px;
 }
 
 .checkbox {
@@ -82,4 +82,14 @@
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
+}
+
+@media (max-width: 1024px) {
+    .project-budget{
+        flex-direction: column;
+    }
+    .budget-btn{
+        flex-direction: column;
+        gap:20px;
+    }
 }
