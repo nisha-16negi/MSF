@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import NextButton from "../Button/NextButton";
 import PrevButton from "../Button/PrevButton";
 import "../OurServices/OurServices.css";
@@ -10,6 +11,18 @@ import React, { useState } from "react";
 
 const OurServices = (props) => {
   const [isSelect, setIsSelect] = useState(null);
+
+  useEffect(() => {
+    const storedService = localStorage.getItem("selectedService");
+    if (storedService) {
+      setIsSelect(storedService);
+    }
+  }, []);
+
+  const handleClick = (service) => {
+    setIsSelect(service);
+    localStorage.setItem("selectedService", service);
+  };
   return (
     <>
       <div className="services-container">
@@ -22,25 +35,25 @@ const OurServices = (props) => {
             <div
               data-testid="dev-service"
               className={`service-container${
-                isSelect === "value1" ? "-selected" : ""
+                isSelect === "Development" ? "-selected" : ""
               }`}
               onClick={() => {
-                setIsSelect("value1");
+                handleClick("Development");
               }}
             >
-              <LuScreenShare color="#4A3AFF" className="icons"/>
+              <LuScreenShare color="#4A3AFF" className="icons" />
               <span className="services">Development</span>
             </div>
             <div
               data-testid="web-service"
               className={`service-container${
-                isSelect === "value2" ? "-selected" : ""
+                isSelect === "Web Design" ? "-selected" : ""
               }`}
               onClick={() => {
-                setIsSelect("value2");
+                handleClick("Web Design");
               }}
             >
-              <MdOutlineScreenSearchDesktop color="#4A3AFF" className="icons"/>
+              <MdOutlineScreenSearchDesktop color="#4A3AFF" className="icons" />
               <span className="services">Web Design</span>
             </div>
           </div>
@@ -48,25 +61,25 @@ const OurServices = (props) => {
             <div
               data-testid="marketing-service"
               className={`service-container${
-                isSelect === "value3" ? "-selected" : ""
+                isSelect === "Marketing" ? "-selected" : ""
               }`}
               onClick={() => {
-                setIsSelect("value3");
+                handleClick("Marketing");
               }}
             >
-              <HiSpeakerphone color="#4A3AFF" className="icons"/>
+              <HiSpeakerphone color="#4A3AFF" className="icons" />
               <span className="services">Marketing</span>
             </div>
             <div
               data-testid="other-service"
               className={`service-container${
-                isSelect === "value4" ? "-selected" : ""
+                isSelect === "Other" ? "-selected" : ""
               }`}
               onClick={() => {
-                setIsSelect("value4");
+                handleClick("Other");
               }}
             >
-              <IoMdSettings color="#4A3AFF" className="icons"/>
+              <IoMdSettings color="#4A3AFF" className="icons" />
               <span className="services">Other</span>
             </div>
           </div>

@@ -18,7 +18,9 @@ function App() {
   };
 
   const handleSubmit = () => {
+    localStorage.clear();
     alert("Form submitted!");
+    setStep(1);
   };
   return (
     <div className="p-container">
