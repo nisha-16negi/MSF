@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../ProjectBudget/ProjectBudget.css";
 import PrevButton from "../Button/PrevButton";
 import NextButton from "../Button/NextButton";
@@ -8,9 +8,18 @@ import React from "react";
 const ProjectBudget = (props) => {
   const [isChecked, setIsChecked] = useState(null);
 
-  const handleCheckboxClick = (checkbox) => {
-    setIsChecked(checkbox === isChecked ? null : checkbox);
+  const handleCheckboxClick = (selectedBudget) => {
+    setIsChecked(selectedBudget);
+    localStorage.setItem('selectedBudget',selectedBudget)
   };
+
+  useEffect(()=>{
+    const storedBudget = localStorage.getItem('selectedBudget');
+    if(storedBudget){
+      setIsChecked(storedBudget);
+    }
+  },[])
+
   return (
     <>
       <div className="project-budget-container">
@@ -23,9 +32,9 @@ const ProjectBudget = (props) => {
             <div
               data-testid="option-1"
               className={`budget-container${
-                isChecked === "checkbox1" ? "-checked" : ""
+                isChecked === "budget1" ? "-checked" : ""
               }`}
-              onClick={() => handleCheckboxClick("checkbox1")}
+              onClick={() => handleCheckboxClick("budget1")}
             >
               <div
                 className={`checkbox${
@@ -41,9 +50,9 @@ const ProjectBudget = (props) => {
             <div
               data-testid="option-2"
               className={`budget-container${
-                isChecked === "checkbox2" ? "-checked" : ""
+                isChecked === "budget2" ? "-checked" : ""
               }`}
-              onClick={() => handleCheckboxClick("checkbox2")}
+              onClick={() => handleCheckboxClick("budget2")}
             >
               <div
                 className={`checkbox${
@@ -62,9 +71,9 @@ const ProjectBudget = (props) => {
             <div
               data-testid="option-3"
               className={`budget-container${
-                isChecked === "checkbox3" ? "-checked" : ""
+                isChecked === "budget3" ? "-checked" : ""
               }`}
-              onClick={() => handleCheckboxClick("checkbox3")}
+              onClick={() => handleCheckboxClick("budget3")}
             >
               <div
                 className={`checkbox${
@@ -80,9 +89,9 @@ const ProjectBudget = (props) => {
             <div
               data-testid="option-4"
               className={`budget-container${
-                isChecked === "checkbox4" ? "-checked" : ""
+                isChecked === "budget4" ? "-checked" : ""
               }`}
-              onClick={() => handleCheckboxClick("checkbox4")}
+              onClick={() => handleCheckboxClick("budget4")}
             >
               <div
                 className={`checkbox${
